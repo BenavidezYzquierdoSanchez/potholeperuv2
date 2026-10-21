@@ -7,9 +7,9 @@ from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from typing import Optional
-from .core import ROOT,DATA,MODELS,model_for,infer,decode,device
-from . import db
-from .worker import analyze
+from backend.core import ROOT,DATA,MODELS,model_for,infer,decode,device
+from backend import db
+from backend.worker import analyze
 
 MAX_UPLOAD_MB=int(os.getenv('MAX_UPLOAD_MB','400'))
 API_KEY=os.getenv('BACHES_API_KEY','')
