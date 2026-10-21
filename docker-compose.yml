@@ -1,0 +1,12 @@
+services:
+  baches:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - BACHES_API_KEY=${BACHES_API_KEY:-}
+      - MAX_UPLOAD_MB=400
+    volumes:
+      - ./data:/app/data
+      - ./datasets:/app/datasets
+    restart: unless-stopped
